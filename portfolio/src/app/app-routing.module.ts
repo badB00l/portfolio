@@ -7,7 +7,6 @@ const routes: Routes = [
   {path: '', redirectTo: '/profile', pathMatch: 'full'},
   {path: 'profile', component: ProfileComponent}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes), UserPortfolioModule],
   exports: [RouterModule]
