@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UserRestService } from '../shared-module/services/user-rest.service';
+import { UserRestService } from '../shared-module/services/external/user-rest.service';
 
 @Injectable({
   providedIn: 'root'
