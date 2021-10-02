@@ -8,9 +8,19 @@ export class Portfolio implements IPortfolio{
   private _phoneNumber?: string;
   private _birthDate?: Date;
   private _password?: string;
+  private _backgroundPicUrl?: string;
+  private _thumbnailPicUrl?: string;
 
 
-	constructor(name?: string, surname?: string, title?: string, email?: string, phoneNumber?: string, birthDate?: Date, password?: string) {
+	constructor(name?: string,
+              surname?: string,
+              title?: string,
+              email?: string,
+              phoneNumber?: string,
+              birthDate?: Date,
+              password?: string,
+              backgroundPicUrl?: string,
+              thumbnailPicUrl?: string) {
 		this._name = name;
 		this._surname = surname;
 		this._title = title;
@@ -18,6 +28,8 @@ export class Portfolio implements IPortfolio{
 		this._phoneNumber = phoneNumber;
 		this._birthDate = birthDate;
 		this._password = password;
+    this._backgroundPicUrl = backgroundPicUrl;
+    this._thumbnailPicUrl = thumbnailPicUrl;
 	}
 
 
@@ -71,10 +83,26 @@ export class Portfolio implements IPortfolio{
 
     /**
      * Getter password
-     * @return {string}
+     * @return {string | undefined}
      */
 	public get password(): string | undefined  {
 		return this._password;
+	}
+
+    /**
+       * Getter backgroundPicUrl
+       * @return {string | undefined}
+       */
+	public get backgroundPicUrl(): string | undefined  {
+		return this._backgroundPicUrl;
+	}
+
+   /**
+       * Getter thumbnailPicUrl
+       * @return {string | undefined}
+       */
+	public get thumbnailPicUrl(): string | undefined  {
+		return this._thumbnailPicUrl;
 	}
 
     /**
@@ -131,6 +159,22 @@ export class Portfolio implements IPortfolio{
      */
 	public set password(value: string | undefined ) {
 		this._password = value;
+	}
+
+    /**
+   * Setter backgroundPicUrl
+   * @param {string | undefined} value
+   */
+	public set backgroundPicUrl(value: string | undefined ) {
+		this._backgroundPicUrl = value;
+	}
+
+      /**
+   * Setter thumbnailPicUrl
+   * @param {string | undefined} value
+   */
+	public set thumbnailPicUrl(value: string | undefined ) {
+		this._thumbnailPicUrl = value;
 	}
 
 }

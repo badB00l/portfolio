@@ -5,7 +5,6 @@ import { PortfolioConverter } from '../shared-module/models/converters/portfolio
 import { ResponseWrapper } from '../shared-module/models/dtos/response-wrapper';
 import { Portfolio } from '../shared-module/models/view-models/portfolio';
 import { UserRestService } from '../shared-module/services/external/user-rest.service';
-import { UserPortfolioModule } from '../user-portfolio/user-portfolio.module';
 
 @Injectable({
   providedIn: 'root'
