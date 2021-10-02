@@ -21,7 +21,9 @@ export class PortfolioConverter implements IConverter{
                         dto.email,
                         dto.phone,
                         dto.dob && dto.dob.date,
-                        dto.login && dto.login.password);
+                        dto.login && dto.login.password,
+                        dto.picture.large,
+                        dto.picture.large);
   }
 
 }
