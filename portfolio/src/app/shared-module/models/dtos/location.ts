@@ -1,16 +1,18 @@
-import { ICoordinates, ILocation, IStreet, ITimezone } from "../i-dtos/idtos";
+import { ILocation, ITimezone } from "../i-dtos/idtos";
+import { Coordinates } from "./coordinates";
+import { Street } from "./street";
 
 export class Location implements ILocation{
-  private _street: IStreet;
+  private _street: Street;
   private _city: string;
   private _state: string;
   private _country: string;
   private _postcode: number;
-  private _coordinates: ICoordinates;
+  private _coordinates: Coordinates;
   private _timezone: ITimezone;
 
 
-	constructor(street: IStreet, city: string, state: string, country: string, postcode: number, coordinates: ICoordinates, timezone: ITimezone) {
+	constructor(street: Street, city: string, state: string, country: string, postcode: number, coordinates: Coordinates, timezone: ITimezone) {
 		this._street = street;
 		this._city = city;
 		this._state = state;
@@ -23,9 +25,9 @@ export class Location implements ILocation{
 
     /**
      * Getter street
-     * @return {IStreet}
+     * @return {Street}
      */
-	public get street(): IStreet {
+	public get street(): Street {
 		return this._street;
 	}
 
@@ -63,9 +65,9 @@ export class Location implements ILocation{
 
     /**
      * Getter coordinates
-     * @return {ICoordinates}
+     * @return {Coordinates}
      */
-	public get coordinates(): ICoordinates {
+	public get coordinates(): Coordinates {
 		return this._coordinates;
 	}
 
@@ -79,9 +81,9 @@ export class Location implements ILocation{
 
     /**
      * Setter street
-     * @param {IStreet} value
+     * @param {Street} value
      */
-	public set street(value: IStreet) {
+	public set street(value: Street) {
 		this._street = value;
 	}
 
@@ -119,9 +121,9 @@ export class Location implements ILocation{
 
     /**
      * Setter coordinates
-     * @param {ICoordinates} value
+     * @param {Coordinates} value
      */
-	public set coordinates(value: ICoordinates) {
+	public set coordinates(value: Coordinates) {
 		this._coordinates = value;
 	}
 

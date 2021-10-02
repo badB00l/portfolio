@@ -14,7 +14,7 @@ export interface IInfo extends IDomain {
 export interface IResult extends IDomain {
   gender:     string;
   name:       IName;
-  location:   Location;
+  location:   ILocation;
   email:      string;
   login:      ILogin;
   dob:        IDob;

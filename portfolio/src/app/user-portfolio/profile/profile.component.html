@@ -12,12 +12,12 @@
             <div class="card-content">
                 <h3>{{placeholder}}</h3>
                 <div class="icon-block">
-                  <a href="#"><i class="bi-file-person" (mouseover)="changePlaceholder(model.completeName)"></i></a>
-                  <a href="#"><i class="bi-map" (mouseover)="changePlaceholder(model.address)"></i></a>
-                  <a href="#"><i class="bi-mailbox" (mouseover)="changePlaceholder(model.email)"></i></a>
-                  <a href="#"><i class="bi-calendar3" (mouseover)="changePlaceholder(model.birthDate)"></i></a>
-                  <a href="#"><i class="bi-telephone" (mouseover)="changePlaceholder(model.phoneNumber)"></i></a>
-                  <a href="#"><i class="bi-lock" (mouseover)="changePlaceholder(model.password)"></i></a></div>
+                  <a href="#"><i class="bi-file-person" (mouseover)="changePlaceholder(model.completeName, 'person')"></i></a>
+                  <a href="#"><i class="bi-map" (mouseover)="changePlaceholder(model.address, 'map')"></i></a>
+                  <a href="#"><i class="bi-mailbox" (mouseover)="changePlaceholder(model.email, 'email')"></i></a>
+                  <a href="#"><i class="bi-calendar3" (mouseover)="changePlaceholder(model.birthDate, 'birthDate')"></i></a>
+                  <a href="#"><i class="bi-telephone" (mouseover)="changePlaceholder(model.phoneNumber, 'phone')"></i></a>
+                  <a href="#"><i class="bi-lock" (mouseover)="changePlaceholder(model.password, 'password')"></i></a></div>
                 </div>
             </div>
             <!-- <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p> -->

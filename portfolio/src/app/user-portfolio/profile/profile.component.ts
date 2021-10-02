@@ -18,12 +18,41 @@ export class ProfileComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.userService.getPortfolioThroughUserProfile().subscribe( m => {
       this.model = m;
-      this.placeholder = this.model.completeName;
+      this.placeholder = "My name is " + this.model.completeName;
     });
   }
 
-  changePlaceholder(newPlaceholder: string | undefined) {
-    this.placeholder = newPlaceholder;
+  changePlaceholder(newPlaceholder: string | undefined, caller?: string) {
+    let prefix: string = "";
+    if(caller) {
+      prefix = this.getPrefixForCaller(caller);
+    }
+    this.placeholder = prefix + newPlaceholder;
   }
 
+  getPrefixForCaller(caller: string): string {
+    let prefix = "";
+    switch (caller) {
+      case "person":
+        prefix = "Hi, my name is ";
+        break;
+      case "phone":
+        prefix = "my phone number is ";
+        break;
+      case "map":
+        prefix = "my address is ";
+        break;
+      case "email":
+        prefix = "my email is ";
+        break;
+      case "birthDate":
+        prefix = "my birthday is ";
+        break;
+      case "password":
+        prefix = "my password is ";
+        break;
+    }
+
+    return prefix;
+  }
 }

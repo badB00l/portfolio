@@ -4,6 +4,7 @@ import { ID } from "./id";
 import { Login } from "./login";
 import { Name } from "./name";
 import { Picture } from "./picture";
+import { Location } from "./location";
 
 export class Result extends Object implements IResult {
   private _gender: string;
