@@ -6,10 +6,11 @@ export class Portfolio implements IPortfolio{
   private _title?: string;
   private _email?: string;
   private _phoneNumber?: string;
-  private _birthDate?: Date;
+  private _birthDate?: string;
   private _password?: string;
   private _backgroundPicUrl?: string;
   private _thumbnailPicUrl?: string;
+  private _address?: string;
 
 
 	constructor(name?: string,
@@ -17,10 +18,11 @@ export class Portfolio implements IPortfolio{
               title?: string,
               email?: string,
               phoneNumber?: string,
-              birthDate?: Date,
+              birthDate?: string,
               password?: string,
               backgroundPicUrl?: string,
-              thumbnailPicUrl?: string) {
+              thumbnailPicUrl?: string,
+              address?: string) {
 		this._name = name;
 		this._surname = surname;
 		this._title = title;
@@ -30,6 +32,7 @@ export class Portfolio implements IPortfolio{
 		this._password = password;
     this._backgroundPicUrl = backgroundPicUrl;
     this._thumbnailPicUrl = thumbnailPicUrl;
+    this._address = address;
 	}
 
 
@@ -75,9 +78,9 @@ export class Portfolio implements IPortfolio{
 
     /**
      * Getter birthDate
-     * @return {Date}
+     * @return {string}
      */
-	public get birthDate(): Date | undefined{
+	public get birthDate(): string | undefined{
 		return this._birthDate;
 	}
 
@@ -104,6 +107,21 @@ export class Portfolio implements IPortfolio{
 	public get thumbnailPicUrl(): string | undefined  {
 		return this._thumbnailPicUrl;
 	}
+   /**
+       * Getter address
+       * @return {string | undefined}
+       */
+	public get address(): string | undefined  {
+		return this._address;
+	}
+
+   /**
+       * Getter completeName
+       * @return {string | undefined}
+       */
+  public get completeName(): string | undefined {
+    return this._title + " " + this._name + " " + this._surname;
+  }
 
     /**
      * Setter name
@@ -147,9 +165,9 @@ export class Portfolio implements IPortfolio{
 
     /**
      * Setter birthDate
-     * @param {Date | undefined} value
+     * @param {string | undefined} value
      */
-	public set birthDate(value: Date | undefined) {
+	public set birthDate(value: string | undefined) {
 		this._birthDate = value;
 	}
 
@@ -175,6 +193,14 @@ export class Portfolio implements IPortfolio{
    */
 	public set thumbnailPicUrl(value: string | undefined ) {
 		this._thumbnailPicUrl = value;
+	}
+
+     /**
+   * Setter address
+   * @param {string | undefined} value
+   */
+	public set address(value: string | undefined ) {
+		this._address = value;
 	}
 
 }

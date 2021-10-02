@@ -6,8 +6,9 @@ export interface IPortfolio extends IViewDomain {
   title?: string;
   email?: string;
   phoneNumber?: string;
-  birthDate?: Date;
+  birthDate?: string;
   password?: string;
   backgroundPicUrl?: string;
   thumbnailPicUrl?: string;
+  address?: string;
 }

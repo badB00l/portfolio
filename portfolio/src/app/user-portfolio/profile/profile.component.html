@@ -10,8 +10,14 @@
                 <img [src]="model.thumbnailPicUrl" alt="profile-image" class="profile"/>
             </div>
             <div class="card-content">
-                <h2>{{model.title}} {{model.name}} {{model.surname}}</h2>
-                <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
+                <h3>{{placeholder}}</h3>
+                <div class="icon-block">
+                  <a href="#"><i class="bi-file-person" (mouseover)="changePlaceholder(model.completeName)"></i></a>
+                  <a href="#"><i class="bi-map" (mouseover)="changePlaceholder(model.address)"></i></a>
+                  <a href="#"><i class="bi-mailbox" (mouseover)="changePlaceholder(model.email)"></i></a>
+                  <a href="#"><i class="bi-calendar3" (mouseover)="changePlaceholder(model.birthDate)"></i></a>
+                  <a href="#"><i class="bi-telephone" (mouseover)="changePlaceholder(model.phoneNumber)"></i></a>
+                  <a href="#"><i class="bi-lock" (mouseover)="changePlaceholder(model.password)"></i></a></div>
                 </div>
             </div>
             <!-- <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p> -->

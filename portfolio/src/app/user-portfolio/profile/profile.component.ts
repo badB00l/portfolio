@@ -10,7 +10,7 @@ import { Portfolio } from 'src/app/shared-module/models/view-models/portfolio';
 export class ProfileComponent implements AfterViewInit {
 
   model: Portfolio = new Portfolio();
-
+  placeholder: string | undefined = "";
   constructor(private userService: UserService) {
 
   }
@@ -18,7 +18,12 @@ export class ProfileComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.userService.getPortfolioThroughUserProfile().subscribe( m => {
       this.model = m;
+      this.placeholder = this.model.completeName;
     });
+  }
+
+  changePlaceholder(newPlaceholder: string | undefined) {
+    this.placeholder = newPlaceholder;
   }
 
 }
