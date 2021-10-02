@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements AfterViewInit {
 
-  constructor() { }
+  constructor(private userService: UserService) {
 
-  ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+
   }
 
 }

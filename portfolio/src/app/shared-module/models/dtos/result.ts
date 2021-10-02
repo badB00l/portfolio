@@ -1,22 +1,28 @@
-import { IDob, IID, ILogin, IName, IPicture, IResult } from "../i-dtos/idtos";
+import { IResult } from "../i-dtos/idtos";
+import { Dob } from "./dob";
+import { ID } from "./id";
+import { Login } from "./login";
+import { Name } from "./name";
+import { Picture } from "./picture";
 
-export class Result implements IResult{
+export class Result extends Object implements IResult {
   private _gender: string;
-  private _name: IName;
+  private _name: Name;
   private _location: Location;
   private _email: string;
-  private _login: ILogin;
-  private _dob: IDob;
-  private _registered: IDob;
+  private _login: Login;
+  private _dob: Dob;
+  private _registered: Dob;
   private _phone: string;
   private _cell: string;
-  private _id: IID;
-  private _picture: IPicture;
+  private _id: ID;
+  private _picture: Picture;
   private _nat: string;
 
 
-	constructor(gender: string, name: IName, location: Location, email: string, login: ILogin, dob: IDob, registered: IDob, phone: string, cell: string, id: IID, picture: IPicture, nat: string) {
-		this._gender = gender;
+	constructor(gender: string, name: Name, location: Location, email: string, login: Login, dob: Dob, registered: Dob, phone: string, cell: string, id: ID, picture: Picture, nat: string) {
+    super();
+    this._gender = gender;
 		this._name = name;
 		this._location = location;
 		this._email = email;
@@ -41,9 +47,9 @@ export class Result implements IResult{
 
     /**
      * Getter name
-     * @return {IName}
+     * @return {Name}
      */
-	public get name(): IName {
+	public get name(): Name {
 		return this._name;
 	}
 
@@ -65,25 +71,25 @@ export class Result implements IResult{
 
     /**
      * Getter login
-     * @return {ILogin}
+     * @return {Login}
      */
-	public get login(): ILogin {
+	public get login(): Login {
 		return this._login;
 	}
 
     /**
      * Getter dob
-     * @return {IDob}
+     * @return {Dob}
      */
-	public get dob(): IDob {
+	public get dob(): Dob {
 		return this._dob;
 	}
 
     /**
      * Getter registered
-     * @return {IDob}
+     * @return {Dob}
      */
-	public get registered(): IDob {
+	public get registered(): Dob {
 		return this._registered;
 	}
 
@@ -105,17 +111,17 @@ export class Result implements IResult{
 
     /**
      * Getter id
-     * @return {IID}
+     * @return {ID}
      */
-	public get id(): IID {
+	public get id(): ID {
 		return this._id;
 	}
 
     /**
      * Getter picture
-     * @return {IPicture}
+     * @return {Picture}
      */
-	public get picture(): IPicture {
+	public get picture(): Picture {
 		return this._picture;
 	}
 
@@ -137,9 +143,9 @@ export class Result implements IResult{
 
     /**
      * Setter name
-     * @param {IName} value
+     * @param {Name} value
      */
-	public set name(value: IName) {
+	public set name(value: Name) {
 		this._name = value;
 	}
 
@@ -161,25 +167,25 @@ export class Result implements IResult{
 
     /**
      * Setter login
-     * @param {ILogin} value
+     * @param {Login} value
      */
-	public set login(value: ILogin) {
+	public set login(value: Login) {
 		this._login = value;
 	}
 
     /**
      * Setter dob
-     * @param {IDob} value
+     * @param {Dob} value
      */
-	public set dob(value: IDob) {
+	public set dob(value: Dob) {
 		this._dob = value;
 	}
 
     /**
      * Setter registered
-     * @param {IDob} value
+     * @param {Dob} value
      */
-	public set registered(value: IDob) {
+	public set registered(value: Dob) {
 		this._registered = value;
 	}
 
@@ -201,17 +207,17 @@ export class Result implements IResult{
 
     /**
      * Setter id
-     * @param {IID} value
+     * @param {ID} value
      */
-	public set id(value: IID) {
+	public set id(value: ID) {
 		this._id = value;
 	}
 
     /**
      * Setter picture
-     * @param {IPicture} value
+     * @param {Picture} value
      */
-	public set picture(value: IPicture) {
+	public set picture(value: Picture) {
 		this._picture = value;
 	}
 

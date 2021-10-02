@@ -1,11 +1,17 @@
-export interface IInfo {
+export interface IDomain {
+}
+export interface IResponseWrapper extends IDomain {
+  results: Array<IResult>,
+  info: IInfo
+}
+export interface IInfo extends IDomain {
   seed:    string;
   results: number;
   page:    number;
   version: string;
 }
 
-export interface IResult {
+export interface IResult extends IDomain {
   gender:     string;
   name:       IName;
   location:   Location;
@@ -20,17 +26,17 @@ export interface IResult {
   nat:        string;
 }
 
-export interface IDob {
-  date: Date;
+export interface IDob extends IDomain {
+  date: Date
   age:  number;
 }
 
-export interface IID {
+export interface IID extends IDomain {
   name:  string;
   value: null;
 }
 
-export interface ILocation {
+export interface ILocation extends IDomain {
   street:      IStreet;
   city:        string;
   state:       string;
@@ -40,22 +46,22 @@ export interface ILocation {
   timezone:    ITimezone;
 }
 
-export interface ICoordinates {
+export interface ICoordinates extends IDomain {
   latitude:  string;
   longitude: string;
 }
 
-export interface IStreet {
+export interface IStreet extends IDomain {
   number: number;
   name:   string;
 }
 
-export interface ITimezone {
+export interface ITimezone extends IDomain {
   offset:      string;
   description: string;
 }
 
-export interface ILogin {
+export interface ILogin extends IDomain {
   uuid:     string;
   username: string;
   password: string;
@@ -65,13 +71,13 @@ export interface ILogin {
   sha256:   string;
 }
 
-export interface IName {
+export interface IName extends IDomain {
   title: string;
   first: string;
   last:  string;
 }
 
-export interface IPicture {
+export interface IPicture extends IDomain {
   large:     string;
   medium:    string;
   thumbnail: string;
